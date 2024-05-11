@@ -1,22 +1,45 @@
 import { Link } from "react-router-dom";
 
-const JobCard = () => {
+const JobCard = ({ job }) => {
+    const { category,loggedInUserInfo, name, title, postingDate, deadline, salaryRange, applicantsNumber } = job
     return (
         <div>
-            <div className=" mx-auto gap-8 mt-8 md:mt-16\ p-6">
-                <div className=" rounded-md shadow-md bg-gray-950 dark:text-white">
+            <div className="mx-auto mt-9 max-w-3xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+                {/* <img className="object-cover w-full h-full" src="https://i.ibb.co/p4c5JrX/images-3.jpg" alt="Article" /> */}
 
-                    <div className="flex flex-col justify-between p-6 space-y-8">
-                        <div className="space-y-2">
-                            <h2 className="text-3xl font-semibold tracking-wide">Web Development</h2>
-                            <p className="dark:text-white">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
+                <div className="p-6">
+                    <div>
+                        <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">category: {category}</span>
+                        <a href="#" className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline" tabIndex="0" role="link">{title}</a>
+                        {/* <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{loggedInUserInfo.name}</p> */}
+                    </div>
+                    <div>
+                        <p className=" font-semibold text-gray-700 dark:text-gray-200">
+                            posted this job: {loggedInUserInfo.name}
+                        </p>
+                    </div>
+                    <div className="mt-4">
+                        <div className="flex items-center">
+
+                            {/* <div className="flex items-center">
+                                <img className="object-cover h-10 rounded-full" src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
+                                <a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200" tabIndex="0" role="link">{name}</a>
+                            </div> */}
+                            <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">Posting Date: {postingDate}</span>
+                            <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">Deadline: {deadline}</span>
                         </div>
-                        <Link to={"/job-details"}>
-                            <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50">Details Button
-                            </button>
-                        </Link>
+                        <div className="mx-1 text-xs text-gray-600 dark:text-gray-300">
+                            <span>Applicants Number: {applicantsNumber}</span>
+                        </div>
+                        <div className="mx-1 text-xs text-gray-600 dark:text-gray-300">
+                            <span>Salary Range: {salaryRange}</span>
+                        </div>
                     </div>
                 </div>
+                <Link to={"/alljob"}>
+                    <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50">View Details
+                    </button>
+                </Link>
             </div>
         </div>
     );
