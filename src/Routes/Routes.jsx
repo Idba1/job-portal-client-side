@@ -5,6 +5,7 @@ import Register from '../Pages/RegisterPage/Register';
 import LogIn from '../Pages/LogInPage/LogIn';
 import BlogPage from '../Pages/BlogPage/BlogPage';
 import Home from '../Components/Home/Home';
+import AllJob from '../Pages/AllJob/AllJob';
 
 const Routes = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <LogIn></LogIn>,
+            },
+            {
+                path: '/alljobs',
+                element: <AllJob></AllJob>,
             },
             {
                 path: '/blogs',
