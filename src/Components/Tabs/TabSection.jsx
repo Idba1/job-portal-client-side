@@ -1,7 +1,8 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import JobCard from '../../Pages/JobCard/JobCard';
 
-const TabSection = () => {
+const TabSection = ({ alljob }) => {
     return (
         <div className='my-16'>
             <h1 className='text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl '>
@@ -20,16 +21,42 @@ const TabSection = () => {
                 </TabList>
 
                 <TabPanel>
-                    <h2>On-Site JOb</h2>
+                    <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                        {alljob.filter(j => j.category === 'On Site')
+                            .map(job => (
+                                <JobCard key={job._id} job={job} />
+                            ))}
+                    </div>
                 </TabPanel>
+
+
                 <TabPanel>
-                    <h2>Remote Job</h2>
+                    <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                        {alljob.filter(j => j.category === 'Remote')
+                            .map(job => (
+                                <JobCard key={job._id} job={job} />
+                            ))}
+                    </div>
                 </TabPanel>
+
+
                 <TabPanel>
-                    <h2>Hybrid Job</h2>
+                    <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                        {alljob.filter(j => j.category === 'Hybrid')
+                            .map(job => (
+                                <JobCard key={job._id} job={job} />
+                            ))}
+                    </div>
                 </TabPanel>
+
+
                 <TabPanel>
-                    <h2>Part-Time Job</h2>
+                    <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                        {alljob.filter(j => j.category === 'Part-Time')
+                            .map(job => (
+                                <JobCard key={job._id} job={job} />
+                            ))}
+                    </div>
                 </TabPanel>
             </Tabs>
         </div>

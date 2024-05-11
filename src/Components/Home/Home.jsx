@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <TabSection></TabSection>
+            <TabSection alljob={alljob}></TabSection>
         </div>
     );
 };
