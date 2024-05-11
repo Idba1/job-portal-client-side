@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const JobDetails = () => {
     return (
         <div>
-            <div className="mx-auto max-w-3xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-                <img className="object-cover w-full h-64" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article" />
+            <div className="mx-auto mt-9 max-w-3xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+                <img className="object-cover w-full h-full" src="https://i.ibb.co/p4c5JrX/images-3.jpg" alt="Article" />
 
                 <div className="p-6">
                     <div>
