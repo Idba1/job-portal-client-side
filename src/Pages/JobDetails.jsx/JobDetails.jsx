@@ -24,7 +24,7 @@ const JobDetails = () => {
                     </div>
                 </div>
                 <Link to={"/alljobs"}>
-                        <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50">View All
+                        <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50">Apply Button
                         </button>
                     </Link>
             </div>

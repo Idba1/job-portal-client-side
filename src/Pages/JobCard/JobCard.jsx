@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
-    const { category,loggedInUserInfo, name, title, postingDate, deadline, salaryRange, applicantsNumber } = job
+    const { _id, category,loggedInUserInfo, name, title, postingDate, deadline, salaryRange, applicantsNumber } = job
     return (
         <div>
             <div className="mx-auto mt-9 max-w-3xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
@@ -36,7 +36,7 @@ const JobCard = ({ job }) => {
                         </div>
                     </div>
                 </div>
-                <Link to={"/alljob"}>
+                <Link to={`/job/${_id}`}>
                     <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50">View Details
                     </button>
                 </Link>

@@ -6,6 +6,7 @@ const AllJob = () => {
     const alljob = useLoaderData();
     console.log(alljob);
 
+
     const [searchTittle, setSearchTittle] = useState('');
 
     const filteredJobs = alljob.filter(job =>
@@ -46,7 +47,7 @@ const AllJob = () => {
                                 <td>{job.deadline}</td>
                                 <td>{job.salaryRange}</td>
                                 <td>
-                                    <Link to={"/job-details"}> <button className="btn">View Details</button></Link>
+                                    <Link to={`/job/${job._id}`}> <button className="btn">View Details</button></Link>
                                 </td>
                             </tr>
                         ))}
