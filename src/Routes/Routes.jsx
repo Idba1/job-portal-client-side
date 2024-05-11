@@ -21,6 +21,7 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/alljob`)
             },
             {
                 path: '/register',
@@ -31,8 +32,9 @@ const Routes = createBrowserRouter([
                 element: <LogIn></LogIn>,
             },
             {
-                path: '/alljobs',
+                path: '/alljob',
                 element: <AllJob></AllJob>,
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/alljob`)
             },
             {
                 path: '/job-details',
@@ -56,7 +58,7 @@ const Routes = createBrowserRouter([
                 path: '/blogs',
                 element: <BlogPage></BlogPage>,
             },
-           
+
         ],
     },
 ])

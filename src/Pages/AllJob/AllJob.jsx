@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllJob = () => {
+    const alljob = useLoaderData();
+    console.log(alljob);
     return (
         <div className="grid grid-cols-1 mx-auto gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3 p-6">
             <div className=" rounded-md shadow-md bg-gray-950 dark:text-white">

@@ -38,7 +38,7 @@ const Navbar = () => {
                                 isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"/"}>Home</NavLink>
 
                             <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"/alljobs"}>ALL JOBS</NavLink>
+                                isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"/alljob"}>ALL JOBS</NavLink>
                             {user && <NavLink className={({ isActive }) =>
                                 isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to="/applied-jobs">APPLIED JOBS</NavLink>}
 
@@ -62,7 +62,7 @@ const Navbar = () => {
                             to={"/"}>HOME</NavLink>
 
                         <NavLink className={({ isActive }) =>
-                            isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"alljobs"}>ALL JOBS</NavLink>
+                            isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"/alljob"}>ALL JOBS</NavLink>
                         {user && <NavLink className={({ isActive }) =>
                             isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to="/applied-jobs">APPLIED JOBS</NavLink>}
 
