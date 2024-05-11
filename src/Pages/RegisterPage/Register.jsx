@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
@@ -158,7 +158,7 @@ const Register = () => {
                               <SocialLogin></SocialLogin>
                                 <div>
                                     <p className="mt-4 text-center text-gray-600 dark:text-gray-400">If you have an accout?
-                                        <a rel="noopener noreferrer" href="/login" className="underline text-gray-600 dark:text-gray-400">Log In</a>
+                                        <Link to={"/login"} rel="noopener noreferrer"  className="underline text-gray-600 dark:text-gray-400">Log In</Link>
                                     </p>
                                 </div>
                             </div>
