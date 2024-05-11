@@ -27,30 +27,32 @@ const AllJob = () => {
                 />
             </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Job Title</th>
-                        <th>Job Posting Date</th>
-                        <th>Application Deadline</th>
-                        <th>Salary Range</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredJobs.map(job => (
-                        <tr key={job.id}>
-                            <td>{job.title}</td>
-                            <td>{job.postingDate}</td>
-                            <td>{job.deadline}</td>
-                            <td>{job.salaryRange}</td>
-                            <td>
-                                <Link to={"/job-details"}> <button className="btn">View Details</button></Link>
-                            </td>
+            <div className="mx-0 container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Job Posting Date</th>
+                            <th>Application Deadline</th>
+                            <th>Salary Range</th>
+                            <th>Details</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {filteredJobs.map(job => (
+                            <tr key={job.id}>
+                                <td>{job.title}</td>
+                                <td>{job.postingDate}</td>
+                                <td>{job.deadline}</td>
+                                <td>{job.salaryRange}</td>
+                                <td>
+                                    <Link to={"/job-details"}> <button className="btn">View Details</button></Link>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
