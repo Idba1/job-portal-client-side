@@ -39,11 +39,14 @@ const Navbar = () => {
 
                             <NavLink className={({ isActive }) =>
                                 isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"/alljobs"}>ALL JOBS</NavLink>
-                            {user && <NavLink className="navbar-item" to="/applied-jobs">APPLIED JOBS</NavLink>}
+                            {user && <NavLink className={({ isActive }) =>
+                                isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to="/applied-jobs">APPLIED JOBS</NavLink>}
 
-                            {user && <NavLink className="navbar-item" to="/add-job">ADD A JOB</NavLink>}
+                            {user && <NavLink className={({ isActive }) =>
+                                isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to="/add-job">ADD A JOB</NavLink>}
 
-                            {user && <NavLink className="navbar-item" to="/my-jobs">MY JOBS</NavLink>}
+                            {user && <NavLink className={({ isActive }) =>
+                                isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to="/my-jobs">MY JOBS</NavLink>}
 
                             <NavLink className={({ isActive }) =>
                                 isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"/blogs"}>BLOGS</NavLink>
@@ -60,11 +63,14 @@ const Navbar = () => {
 
                         <NavLink className={({ isActive }) =>
                             isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"alljobs"}>ALL JOBS</NavLink>
-                        {user && <NavLink className="navbar-item" to="/applied-jobs">APPLIED JOBS</NavLink>}
+                        {user && <NavLink className={({ isActive }) =>
+                            isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to="/applied-jobs">APPLIED JOBS</NavLink>}
 
-                        {user && <NavLink className="navbar-item" to="/add-job">ADD A JOB</NavLink>}
+                        {user && <NavLink className={({ isActive }) =>
+                            isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to="/add-job">ADD A JOB</NavLink>}
 
-                        {user && <NavLink className="navbar-item" to="/my-jobs">MY JOBS</NavLink>}
+                        {user && <NavLink className={({ isActive }) =>
+                            isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to="/my-jobs">MY JOBS</NavLink>}
 
                         <NavLink className={({ isActive }) =>
                             isActive ? 'text-[#FFD700]' : theme === 'light' ? 'text-[#004A7F]' : 'text-white'} to={"/blogs"}>BLOGS</NavLink>
@@ -91,7 +97,7 @@ const Navbar = () => {
                                         </label>
                                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                             <li>
-                                                <button className="btn btn-sm  btn-ghost">{user?.displayName || 'traveler'}</button>
+                                                <button className="btn btn-sm  btn-ghost">{user?.displayName || 'user'}</button>
 
                                             </li>
                                             <li>
