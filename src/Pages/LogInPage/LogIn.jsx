@@ -34,18 +34,7 @@ const LogIn = () => {
     return (
         <div className="bg-white dark:bg-gray-900">
             <div className="flex justify-center h-screen">
-                <div className="bg-cover md:block md:w-2/5 lg:block lg:w-1/2" style={{ backgroundImage: "url(https://i.ibb.co/6Z7Nhs4/images-1.jpg)" }}>
-                    <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
-                        <div>
-                            <h2 className="text-2xl font-bold text-white sm:text-3xl">Meraki UI</h2>
-                            <p className="max-w-xl mt-3 text-gray-300">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
-                                autem ipsa, nulla laboriosam dolores, repellendus perferendis libero suscipit nam temporibus
-                                molestiae
-                            </p>
-                        </div>
-                    </div>
-                </div>
+              
 
                 <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
                     <div className="flex-1">
@@ -85,6 +74,18 @@ const LogIn = () => {
                             <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
                             <SocialLogin></SocialLogin>
                             <p className="mt-6 text-sm text-center text-gray-400">Don't have an account yet? <Link to={"/register"} className="text-blue-500 focus:outline-none focus:underline hover:underline">Sign up</Link>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="bg-cover md:block md:w-2/5 lg:block lg:w-1/2" style={{ backgroundImage: "url(https://i.ibb.co/6Z7Nhs4/images-1.jpg)" }}>
+                    <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
+                        <div>
+                            <h2 className="text-2xl font-bold text-white sm:text-3xl">Meraki UI</h2>
+                            <p className="max-w-xl mt-3 text-gray-300">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
+                                autem ipsa, nulla laboriosam dolores, repellendus perferendis libero suscipit nam temporibus
+                                molestiae
+                            </p>
                         </div>
                     </div>
                 </div>
