@@ -1,5 +1,3 @@
-
-
 import { Typewriter } from 'react-simple-typewriter';
 
 const Slider = () => {
