@@ -2,13 +2,59 @@ import { useContext, useState } from "react"
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider"
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import axios from "axios"
+import { useNavigate } from "react-router-dom"
+import Swal from "sweetalert2"
 
 const AddJob = () => {
     const [startDate, setStartDate] = useState(new Date())
-
+    const navigate = useNavigate()
     const { user } = useContext(AuthContext)
     const email = user?.email || 'user@email.com';
     const name = user?.displayName || 'user';
+
+
+    const handleFormSubmit = async e => {
+        e.preventDefault()
+        const form = e.target
+        const picture_URL = form.picture_URL.value
+        const job_title = form.job_title.value
+        const fullName = form.fullName.value
+        const emailAddress = form.emailAddress.value
+        const postingDate = form.postingDate.value
+        const deadline = startDate
+        const category = form.category.value
+        const salary_range = parseFloat(form.salary_range.value)
+        const applicantsNumber = parseFloat(form.applicantsNumber.value)
+        const description = form.description.value
+        const jobData = {
+            picture_URL,
+            job_title,
+            fullName,
+            emailAddress,
+            postingDate,
+            deadline,
+            category,
+            salary_range,
+            applicantsNumber,
+            description,
+        }
+        try {
+            const { data } = await axios.post(
+                `${import.meta.env.VITE_API_URL}/add-job`,
+                jobData
+            )
+            console.log(data)
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'successfully Post a Job!',
+            });
+            navigate('/my-jobs')
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
 
     return (
@@ -18,7 +64,7 @@ const AddJob = () => {
                     Post a Job
                 </h2>
 
-                <form>
+                <form onSubmit={handleFormSubmit}>
                     <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
                         <div>
                             <label className='text-gray-700 ' htmlFor='picture_URL'>
@@ -133,6 +179,8 @@ const AddJob = () => {
                             <input
                                 id='applicantsNumber'
                                 name='applicantsNumber'
+                                defaultValue={0}
+                                disabled
                                 type='number'
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                             />
