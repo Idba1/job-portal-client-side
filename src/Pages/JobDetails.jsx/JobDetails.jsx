@@ -55,7 +55,7 @@ const JobDetails = () => {
             </div>
 
             {isModalOpen && (
-                <Modal onClose={closeModal} deadline={deadline}>
+                <Modal onClose={closeModal} deadline={deadline} loggedInUserInfo={loggedInUserInfo}>
                     <h2 className="text-xl font-semibold">Apply for this job</h2>
                     <form onSubmit={handleSubmit} className="mt-4">
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">

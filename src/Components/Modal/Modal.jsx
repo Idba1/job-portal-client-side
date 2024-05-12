@@ -3,11 +3,20 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 
-const Modal = ({ onClose, deadline }) => {
+const Modal = ({ onClose, deadline, loggedInUserInfo }) => {
     const { user } = useContext(AuthContext)
     const [resumeLink, setResumeLink] = useState('');
-    const [email, setEmail] = useState(user?.email || '');
-    const [name, setName] = useState(user?.displayName || '');
+    const [email, setEmail] = useState(user?.email || 'user@email.com');
+    const [name, setName] = useState(user?.displayName || 'user');
+
+    const isEmailMatch = () => {
+        const userEmail = user?.email;
+        console.log(userEmail);
+        const postEmail = loggedInUserInfo?.email;
+        console.log(postEmail);
+        return userEmail === postEmail;
+    };
+
     const isDeadlinePassed = () => {
         const deadlineDate = new Date(deadline);
         // console.log(deadline);
@@ -16,15 +25,26 @@ const Modal = ({ onClose, deadline }) => {
         return currentDate > deadlineDate;
     };
 
+
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
+        if (isEmailMatch()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops....',
+                text: 'You cannot apply your own job!',
+            });
+            return;
+        }
         if (isDeadlinePassed()) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'The deadline passed :(',
             });
-            return; // Exit function early
+            return;
         }
         try {
             // send data to server
