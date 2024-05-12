@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider"
 import axios from "axios"
 import toast from "react-hot-toast"
 import Swal from "sweetalert2"
+import { Link } from "react-router-dom"
 
 const MyJob = () => {
     const { user } = useContext(AuthContext)
@@ -160,8 +161,8 @@ const MyJob = () => {
                                                                 />
                                                             </svg>
                                                         </button>
-
-                                                        <button className='text-gray-500 transition-colors duration-200   hover:text-yellow-500 focus:outline-none'>
+                                                            <Link to={`/update/${job._id}`}>
+                                                            <button  className='text-gray-500 transition-colors duration-200   hover:text-yellow-500 focus:outline-none'>
                                                             <svg
                                                                 xmlns='http://www.w3.org/2000/svg'
                                                                 fill='none'
@@ -177,6 +178,8 @@ const MyJob = () => {
                                                                 />
                                                             </svg>
                                                         </button>
+                                                            </Link>
+                                                       
                                                     </div>
                                                 </td>
                                             </tr>
