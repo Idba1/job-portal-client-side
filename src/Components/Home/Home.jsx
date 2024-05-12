@@ -4,7 +4,7 @@ import TabSection from "../Tabs/TabSection";
 
 const Home = () => {
     const alljob = useLoaderData();
-    console.log(alljob);
+    // console.log(alljob);
     return (
         <div>
             <Slider></Slider>

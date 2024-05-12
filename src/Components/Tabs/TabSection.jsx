@@ -1,10 +1,9 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import JobCard from '../../Pages/JobCard/JobCard';
-import { FaAllergies } from 'react-icons/fa';
 
 const TabSection = ({ alljob }) => {
-
+// console.log(alljob);
     return (
         <div className='my-16'>
             <h1 className='text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl '>

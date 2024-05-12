@@ -10,38 +10,41 @@ const AddJob = () => {
     const [startDate, setStartDate] = useState(new Date())
     const navigate = useNavigate()
     const { user } = useContext(AuthContext)
-    const email = user?.email || 'user@email.com';
-    const name = user?.displayName || 'user';
+
 
 
     const handleFormSubmit = async e => {
         e.preventDefault()
         const form = e.target
-        const picture_URL = form.picture_URL.value
-        const job_title = form.job_title.value
-        const fullName = form.fullName.value
-        const emailAddress = form.emailAddress.value
-        const postingDate = form.postingDate.value
-        const deadline = startDate
+        const bannerUrl = form.bannerUrl.value
         const category = form.category.value
-        const salary_range = parseFloat(form.salary_range.value)
-        const applicantsNumber = parseFloat(form.applicantsNumber.value)
+        const deadline = startDate
         const description = form.description.value
+        const email = user?.email || 'user@email.com';
+        const name = user?.displayName || 'user';
+        const postingDate = form.postingDate.value 
+        const salary_range = form.salary_range.value  
+        const title = form.title.value
+        const applicantsNumber = parseFloat(form.applicantsNumber.value)
+        
         const jobData = {
-            picture_URL,
-            job_title,
-            fullName,
-            emailAddress,
-            postingDate,
-            deadline,
+            bannerUrl,
             category,
-            salary_range,
-            applicantsNumber,
+            deadline,
             description,
+            loggedInUserInfo: {
+                email: email,
+                name: name,
+            },
+            postingDate,
+            salary_range, 
+            title,
+            applicantsNumber,
+
         }
         try {
             const { data } = await axios.post(
-                `${import.meta.env.VITE_API_URL}/add-job`,
+                `${import.meta.env.VITE_API_URL}/alljob`,
                 jobData
             )
             console.log(data)
@@ -67,12 +70,12 @@ const AddJob = () => {
                 <form onSubmit={handleFormSubmit}>
                     <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
                         <div>
-                            <label className='text-gray-700 ' htmlFor='picture_URL'>
+                            <label className='text-gray-700 ' htmlFor='bannerUrl'>
                                 Job Banner
                             </label>
                             <input
-                                id='picture_URL'
-                                name='picture_URL'
+                                id='bannerUrl'
+                                name='bannerUrl'
                                 type='url'
                                 placeholder="image url"
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
@@ -80,12 +83,12 @@ const AddJob = () => {
                         </div>
 
                         <div>
-                            <label className='text-gray-700 ' htmlFor='job_title'>
+                            <label className='text-gray-700 ' htmlFor='title'>
                                 Job Title
                             </label>
                             <input
-                                id='job_title'
-                                name='job_title'
+                                id='title'
+                                name='title'
                                 type='text'
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                             />
@@ -98,7 +101,7 @@ const AddJob = () => {
                             <input
                                 id='fullName'
                                 type='text'
-                                value={name}
+                                value={user?.displayName}
                                 name='name'
                                 disabled
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
@@ -112,7 +115,7 @@ const AddJob = () => {
                             <input
                                 id='emailAddress'
                                 type='email'
-                                value={email}
+                                value={user?.email}
                                 name='email'
                                 disabled
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
@@ -143,7 +146,7 @@ const AddJob = () => {
                             <input
                                 id='postingDate'
                                 name='postingDate'
-                                type='number'
+                                type='date'
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                             />
                         </div>

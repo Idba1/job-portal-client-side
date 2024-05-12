@@ -10,8 +10,8 @@ const AllJob = () => {
     const [searchTittle, setSearchTittle] = useState('');
 
     const filteredJobs = alljob.filter(job =>
-        job.title.toLowerCase().includes(searchTittle.toLowerCase())
-    );
+    job.title && job.title.toLowerCase().includes(searchTittle.toLowerCase())
+);
 
 
     return (
