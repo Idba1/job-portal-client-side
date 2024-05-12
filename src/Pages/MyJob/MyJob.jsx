@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider"
 import axios from "axios"
 import toast from "react-hot-toast"
+import Swal from "sweetalert2"
 
 const MyJob = () => {
     const { user } = useContext(AuthContext)
@@ -34,10 +35,12 @@ const MyJob = () => {
             const { data } = await axios.delete(
                 `${import.meta.env.VITE_API_URL}/job/${id}`
             )
-            console.log(data)
-            toast.success('Delete Successful')
-
-            //refresh ui
+            console.log(data)         
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Delete Successful',
+            });
             getData()
         } catch (err) {
             console.log(err.message)
