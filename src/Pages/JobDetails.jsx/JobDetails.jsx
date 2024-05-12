@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 const JobDetails = () => {
     const job = useLoaderData()
     // console.log(job);
-    const { _id,bannerUrl,category,description, loggedInUserInfo, name, title, postingDate, deadline, salaryRange, applicantsNumber } = job;
+    const { _id, bannerUrl, category, description, loggedInUserInfo, name, title, postingDate, deadline, salaryRange, applicantsNumber } = job;
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [price, setPrice] = useState('');
     const [email, setEmail] = useState('');
@@ -38,6 +38,11 @@ const JobDetails = () => {
                             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{description}</p>
                             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Salary Range:{salaryRange}</p>
                             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Applicants Number:{applicantsNumber}</p>
+
+                        </div>
+                        <div className=' flex space-x-5'>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">postingDate:{postingDate}</p>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">deadline:{deadline}</p>
                         </div>
 
                     </div>
@@ -50,7 +55,7 @@ const JobDetails = () => {
             </div>
 
             {isModalOpen && (
-                <Modal onClose={closeModal}>
+                <Modal onClose={closeModal} deadline={deadline}>
                     <h2 className="text-xl font-semibold">Apply for this job</h2>
                     <form onSubmit={handleSubmit} className="mt-4">
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">

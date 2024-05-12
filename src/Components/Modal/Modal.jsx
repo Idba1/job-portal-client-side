@@ -3,14 +3,29 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 
-const Modal = ({ onClose }) => {
-    const {user} = useContext(AuthContext)
+const Modal = ({ onClose, deadline }) => {
+    const { user } = useContext(AuthContext)
     const [resumeLink, setResumeLink] = useState('');
     const [email, setEmail] = useState(user?.email || '');
     const [name, setName] = useState(user?.displayName || '');
+    const isDeadlinePassed = () => {
+        const deadlineDate = new Date(deadline);
+        // console.log(deadline);
+        const currentDate = new Date();
+        // console.log(currentDate);
+        return currentDate > deadlineDate;
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        if (isDeadlinePassed()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'The deadline passed :(',
+            });
+            return; // Exit function early
+        }
         try {
             // send data to server
             const response = await axios.post('http://localhost:9000/apply', {
