@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider"
 import axios from "axios"
-import toast from "react-hot-toast"
 import Swal from "sweetalert2"
 import { Link } from "react-router-dom"
 
@@ -45,7 +44,11 @@ const MyJob = () => {
             getData()
         } catch (err) {
             console.log(err.message)
-            toast.error(err.message)
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+              });
         }
     }
 
