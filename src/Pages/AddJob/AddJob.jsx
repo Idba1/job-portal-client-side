@@ -22,11 +22,11 @@ const AddJob = () => {
         const description = form.description.value
         const email = user?.email || 'user@email.com';
         const name = user?.displayName || 'user';
-        const postingDate = form.postingDate.value 
-        const salary_range = form.salary_range.value  
+        const postingDate = form.postingDate.value
+        const salary_range = form.salary_range.value
         const title = form.title.value
         const applicantsNumber = parseFloat(form.applicantsNumber.value)
-        
+
         const jobData = {
             bannerUrl,
             category,
@@ -37,7 +37,7 @@ const AddJob = () => {
                 name: name,
             },
             postingDate,
-            salary_range, 
+            salary_range,
             title,
             applicantsNumber,
 
@@ -61,9 +61,11 @@ const AddJob = () => {
 
 
     return (
-        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
+        <div className='flex flex-col lg:flex-row  justify-center items-center min-h-[calc(100vh-306px)] my-12 lg:my-20 '>
+            <img className="mb-8 md:mb-32 lg:mb-40" src="https://i.ibb.co/DpYgmbc/pexels-photo-68761.jpg" alt="" />
+
             <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-md '>
-                <h2 className='text-lg font-semibold text-gray-700 capitalize '>
+                <h2 className='text-lg font-semibold text-sky-700 text-center capitalize '>
                     Post a Job
                 </h2>
 
@@ -215,7 +217,7 @@ const AddJob = () => {
                     </div>
 
                     <div className='flex justify-end mt-6'>
-                        <button className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                        <button className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-sky-600 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
                             Save
                         </button>
                     </div>
