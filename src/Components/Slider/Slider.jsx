@@ -13,6 +13,7 @@ const Slider = () => {
                     text-align: center;
                     font-size: 24px;
                     font-weight: bold; 
+                    color: #0077B5;
                 }
                 `}
             </style>
@@ -25,7 +26,7 @@ const Slider = () => {
                             loop={Infinity}
                         />
                     </div>
-                    <img  src="https://i.ibb.co/dWJMDtJ/pexels-photo-1714205.webp" className="w-full h-100vh" alt="Banner 2" />
+                    <img src="https://i.ibb.co/3y9zNL5/pexels-photo-796602.webp" className="w-full h-100vh" alt="Banner 2" />
                 </div>
                 <div id="item2" className="carousel-item w-full relative">
                     <div className="text-wrapper">
@@ -35,7 +36,7 @@ const Slider = () => {
                             loop={Infinity}
                         />
                     </div>
-                    <img src="https://i.ibb.co/3y9zNL5/pexels-photo-796602.webp" className="w-full" alt="Banner 6" />
+                    <img src="https://i.ibb.co/dWJMDtJ/pexels-photo-1714205.webp" className="w-full" alt="Banner 6" />
                 </div>
                 <div id="item3" className="carousel-item w-full relative">
                     <div className="text-wrapper">

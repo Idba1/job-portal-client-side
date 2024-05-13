@@ -5,12 +5,12 @@ import JobCard from '../../Pages/JobCard/JobCard';
 const TabSection = ({ alljob }) => {
     // console.log(alljob);
     return (
-        <div className='mt-16 mb-5'>
-            <h1 className='text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl '>
+        <div className='mt-16 mb-10'>
+            <h1 className='text-2xl font-semibold text-center text-[#0077B5] capitalize lg:text-3xl '>
                 Explore Different Job Types
             </h1>
 
-            <p className='max-w-2xl mx-auto mt-3 mb-9 text-center text-gray-500 '>
+            <p className='max-w-2xl mx-auto mt-3 mb-8 lg:mb-3 text-center text-gray-500 '>
                 Discover the strength and flexibility of our platform, empowering you to explore diverse opportunities.
             </p>
             <Tabs >

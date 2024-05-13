@@ -1,7 +1,6 @@
 import Slider from "../Slider/Slider";
 import TabSection from "../Tabs/TabSection";
 import Fquestion from "../../Pages/Queastion/Fquestion";
-import BlogPage from "../../Pages/BlogPage/BlogPage";
 import Career from "../../Pages/Career/Career";
 import { useState, useEffect } from 'react';
 
@@ -36,7 +35,6 @@ const Home = () => {
             <TabSection alljob={alljob}></TabSection>
             <Career blogs={blogs}></Career>
             <Fquestion></Fquestion>
-            <BlogPage></BlogPage>
         </div>
     );
 };

@@ -52,45 +52,45 @@ const Navbar = () => {
                             </div>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                 <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/"}>Home</NavLink>
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/"}>Home</NavLink>
 
                                 <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/alljob"}>ALL JOBS</NavLink>
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/alljob"}>ALL JOBS</NavLink>
                                 {user && <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/applied-jobs">APPLIED JOBS</NavLink>}
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/applied-jobs">APPLIED JOBS</NavLink>}
 
                                 {user && <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/add-job">ADD A JOB</NavLink>}
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/add-job">ADD A JOB</NavLink>}
 
                                 {user && <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/my-jobs">MY JOBS</NavLink>}
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/my-jobs">MY JOBS</NavLink>}
 
                                 <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/blogs"}>BLOGS</NavLink>
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/blogs"}>BLOGS</NavLink>
 
                             </ul>
                         </div>
-                        <a className="btn btn-ghost text-[#0E46A3] font-bold lg:text-2xl dark:text-sky-400">JobNest</a>
+                        <a href='/' className="btn btn-ghost text-[#0077B5] font-bold lg:text-2xl dark:text-[#0077B5]">JobNest</a>
                     </div>
                     <div className="navbar-center hidden lg:flex ">
                         <ul className="menu menu-horizontal px-1 gap-7 font-semibold text-lg">
                             <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' }
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' }
                                 to={"/"}>HOME</NavLink>
 
                             <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/alljob"}>ALL JOBS</NavLink>
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/alljob"}>ALL JOBS</NavLink>
                             {user && <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/applied-jobs">APPLIED JOBS</NavLink>}
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/applied-jobs">APPLIED JOBS</NavLink>}
 
                             {user && <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/add-job">ADD A JOB</NavLink>}
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/add-job">ADD A JOB</NavLink>}
 
                             {user && <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/my-jobs">MY JOBS</NavLink>}
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to="/my-jobs">MY JOBS</NavLink>}
 
                             <NavLink className={({ isActive }) =>
-                                isActive ? 'text-[#FFD700]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/blogs"}>BLOGS</NavLink>
+                                isActive ? 'text-[#0077B5]' : theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#333333]' } to={"/blogs"}>BLOGS</NavLink>
 
                         </ul>
                     </div>

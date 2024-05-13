@@ -4,8 +4,8 @@ const BlogPage = () => {
         <>
             <div className="container px-6 py-16 mx-auto text-center">
                 <div className="max-w-lg mx-auto">
-                    <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Understanding Authentication and Server-Side Frameworks</h1>
-                    <p className="mt-6 text-gray-500 dark:text-gray-300">Explore the essentials of authentication with a focus on access and refresh tokens in web apps. Learn about Express.js and Nest.js, two powerful server frameworks, and their capabilities for building scalable applications.</p>
+                    <h1 className="text-3xl font-semibold text-[#0077B5] lg:text-4xl">Insights from JobNest's Learning Blog</h1>
+                    <p className="mt-6 text-sky-950">Dive into JobNest's blog for expert advice, industry insights, and career strategies to navigate today's job market with confidence.</p>
                     <button className="px-5 py-2 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 lg:mx-0 lg:w-auto focus:outline-none">
                         Start Learn With JobNest
                     </button>
@@ -15,12 +15,12 @@ const BlogPage = () => {
                     <img className="object-cover w-full h-full rounded-xl lg:w-4/5" src="https://i.ibb.co/yPQkHkV/Modern-Minimalist-Simple-Technology-Banner.png" alt="App Screenshot" />
                 </div>
             </div>
-            <section className="bg-white dark:bg-gray-900">
+            <section className=" dark:bg-sky-50">
                 <div className="container px-6 py-10 mx-auto">
                     <div className="text-center">
-                        <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">From the blog</h1>
+                        <h1 className="text-2xl font-semibold capitalize lg:text-3xl text-[#0077B5] ">From JobNest blog</h1>
 
-                        <p className="max-w-lg mx-auto mt-4 text-gray-500">
+                        <p className="max-w-lg mx-auto mt-4 dark:text-sky-950">
                             Salami mustard spice tea fridge authentic Chinese food dish salt tasty liquor. Sweet savory foodtruck
                             pie.
                         </p>
@@ -41,25 +41,25 @@ const BlogPage = () => {
                                 </div>
                             </div>
 
-                            <h1 className="mt-6 text-xl font-semibold text-gray-800 dark:text-white">
+                            <h1 className="mt-6 text-xl font-semibold text-[#0077B5] ">
                                 Access Token and Refresh Token
                             </h1>
 
-                            <hr className="w-32 my-6 text-blue-500" />
+                            <hr className="w-32 my-4" />
 
                             <p className="text-sm text-gray-500 dark:text-gray-400">
                                 <br />
-                                <span className="text-base underline">Access Token:</span>
+                                <span className="text-base underline text-[#0077B5] ">Access Token:</span>
                                 <br />
 
                                 An access token is a credential used to access protected resources on behalf of a user. It is commonly used in authentication protocols like OAuth 2.0. Once a user successfully authenticates, the server issues an access token, which is then sent with each subsequent request to access protected resources. Access tokens typically have a limited lifespan to enhance security.
                                 <br />
-                                <span className="text-base underline">Refresh Token:</span>
+                                <span className="text-base underline text-[#0077B5] ">Refresh Token:</span>
                                 <br />
 
                                 A refresh token is also part of the OAuth 2.0 protocol. While access tokens are short-lived, refresh tokens are long-lived and are used to obtain new access tokens once the current one expires. This helps maintain user sessions without requiring them to re-enter their credentials frequently.
                                 <br />
-                                <span className="text-base underline">Where to Store:</span>
+                                <span className="text-base underline text-[#0077B5] ">Where to Store:</span>
                                 <br />
                                 Access tokens should be stored securely on the client side, typically in memory or a secure storage mechanism such as browser session storage or HTTP-only cookies. Refresh tokens should be stored securely as well, often in a secure HTTP-only cookie to prevent them from being accessed by client-side scripts.
                             </p>
@@ -80,7 +80,7 @@ const BlogPage = () => {
                                 </div>
                             </div>
 
-                            <h1 className="mt-6 text-xl font-semibold text-gray-800 dark:text-white">
+                            <h1 className="mt-6 text-xl font-semibold text-[#0077B5] ">
                                 Express.js and Nest.js:
                             </h1>
 
@@ -88,12 +88,12 @@ const BlogPage = () => {
 
                             <p className="text-sm text-gray-500 dark:text-gray-400">
                                 <br />
-                                <span className="text-base underline">Express.js:</span>
+                                <span className="text-base underline text-[#0077B5] ">Express.js:</span>
                                 <br />
                                 
                                 Express.js is a popular web application framework for Node.js. It provides a robust set of features for building web and mobile applications, including routing, middleware support, template engines, and more. Express.js simplifies the process of building web servers and APIs in Node.js by providing a minimal and flexible framework.
                                 <br />
-                                <span className="text-base underline">Nest.js:</span>
+                                <span className="text-base underline text-[#0077B5] ">Nest.js:</span>
                                 <br />
                                 
                                 Nest.js is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It is heavily inspired by Angular, utilizing TypeScript and object-oriented programming principles to enhance code maintainability and developer productivity. Nest.js builds on top of Express.js, providing additional features
@@ -115,7 +115,7 @@ const BlogPage = () => {
                                 </div>
                             </div>
 
-                            <h1 className="mt-6 text-xl font-semibold text-gray-800 dark:text-white">
+                            <h1 className="mt-6 text-xl font-semibold text-[#0077B5] ">
                             Explaining Code:
                             </h1>
 
