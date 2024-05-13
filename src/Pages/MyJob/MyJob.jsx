@@ -32,26 +32,39 @@ const MyJob = () => {
 
     const handleDelete = async id => {
         try {
-            const { data } = await axios.delete(
-                `${import.meta.env.VITE_API_URL}/job/${id}`
-            )
-            // console.log(data)         
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: 'Delete Successful',
+            const result = await Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
             });
-            getData()
+    
+            if (result.isConfirmed) {
+                const { data } = await axios.delete(
+                    `${import.meta.env.VITE_API_URL}/job/${id}`
+                );
+    
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+    
+                // Refresh your data
+                getData();
+            }
         } catch (err) {
-            // console.log(err.message)
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Something went wrong!",
-              });
+                text: "Something went wrong!"
+            });
         }
     }
-
+    
     return (
         <section className='container px-4 mx-auto pt-12'>
             <div className='flex items-center gap-x-3'>
