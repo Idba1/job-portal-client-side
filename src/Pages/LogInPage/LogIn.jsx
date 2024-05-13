@@ -32,7 +32,7 @@ const LogIn = () => {
     };
 
     return (
-        <div className="bg-white dark:bg-gray-900">
+        <div className="bg-white dark:bg-gray-300">
             <div className="flex justify-center h-screen">
               
 
@@ -42,21 +42,21 @@ const LogIn = () => {
                             <div className="flex justify-center mx-auto">
                                 <img className="w-auto h-7 sm:h-8" src="https://i.ibb.co/hZ9VcF6/logo.png" alt="" />
                             </div>
-                            <p className="mt-3 text-gray-500 dark:text-gray-300">Sign in to access your account</p>
+                            <p className="mt-3 text-sky-700 dark:text-sky-700">Log In to Your Account</p>
                         </div>
 
                         <div className="mt-8">
                             <form onSubmit={handleSubmit(onSubmit)} >
                                 <div>
-                                    <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
-                                    <input type="text" name="email" id="email" placeholder="email" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" {...register("email", { required: true })}
+                                    <label htmlFor="email" className="block mb-2 text-sm text-sky-700 dark:text-sky-700">Email Address</label>
+                                    <input type="text" name="email" id="email" placeholder="email" className="block w-full px-4 py-2 mt-2 text-sky-700 placeholder-sky-700 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-sky-700 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" {...register("email", { required: true })}
                                     />
                                     {errors.email && (
                                         <span className="text-red-500">This field is required</span>
                                     )}
                                     <div className="mt-6">
 
-                                        <input  type="password" name="password" id="password" placeholder="Password" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"   {...register("password", { required: true })}
+                                        <input  type="password" name="password" id="password" placeholder="Password" className="block w-full px-4 py-2 mt-2 text-sky-700 placeholder-sky-700 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-sky-700 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"   {...register("password", { required: true })}
                                         />
                                         {errors.password && (
                                             <span className="text-red-500">This field is required</span>
@@ -71,20 +71,18 @@ const LogIn = () => {
                                     </div>
                                 
                             </form>
-                            <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
+                            <p className="mt-4 text-center text-sky-700 dark:text-sky-700">or sign in with</p>
                             <SocialLogin></SocialLogin>
-                            <p className="mt-6 text-sm text-center text-gray-400">Don't have an account yet? <Link to={"/register"} className="text-blue-500 focus:outline-none focus:underline hover:underline">Sign up</Link>.</p>
+                            <p className="mt-6 text-sm text-center text-sky-700">Don't have an account yet? <Link to={"/register"} className="text-blue-500 focus:outline-none focus:underline hover:underline">Sign up</Link>.</p>
                         </div>
                     </div>
                 </div>
-                <div className="bg-cover md:block md:w-2/5 lg:block lg:w-1/2" style={{ backgroundImage: "url(https://i.ibb.co/6Z7Nhs4/images-1.jpg)" }}>
+                <div className="bg-cover md:block md:w-2/5 lg:block lg:w-1/2" style={{ backgroundImage: "url(https://i.ibb.co/0jvdLRX/pexels-photo-4065892.webp)" }}>
                     <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                         <div>
-                            <h2 className="text-2xl font-bold text-white sm:text-3xl">Meraki UI</h2>
-                            <p className="max-w-xl mt-3 text-gray-300">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
-                                autem ipsa, nulla laboriosam dolores, repellendus perferendis libero suscipit nam temporibus
-                                molestiae
+                            <h2 className="text-2xl font-bold text-white sm:text-3xl">Log In to Your Account</h2>
+                            <p className="max-w-xl mt-3 text-white">
+                            Access your account securely with our user-friendly login interface. Enter your credentials to explore personalized features and manage your profile seamlessly.
                             </p>
                         </div>
                     </div>
