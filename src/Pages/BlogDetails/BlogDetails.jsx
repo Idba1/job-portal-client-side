@@ -8,7 +8,7 @@ const BlogDetails = () => {
 
     return (
         <div>
-            <div className="max-w-lg p-4 shadow-md dark:bg-gray-50 dark:text-gray-800">
+            <div className="w-3/4 my-10 lg:w-3/4 mx-auto p-4 shadow-md dark:bg-gray-50 dark:text-gray-800">
                 <div className="flex justify-between pb-4 border-bottom">
                     <div className="flex items-center">
                         <a rel="noopener noreferrer" href="#" className="mb-0 capitalize dark:text-gray-800">{details.author}</a>
