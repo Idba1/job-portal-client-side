@@ -55,7 +55,7 @@ const Register = () => {
                 navigate(from);
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = { email, createdAt: createdAt };
-                fetch('http://localhost:5000', {
+                fetch('https://job-nest-server-zeta.vercel.app', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

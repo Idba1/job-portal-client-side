@@ -48,7 +48,7 @@ const Modal = ({ onClose, deadline, loggedInUserInfo }) => {
         }
         try {
             // send data to server
-            const response = await axios.post('http://localhost:9000/apply', {
+            const response = await axios.post('https://job-nest-server-zeta.vercel.app/apply', {
                 name: name,
                 email: email,
                 resumeLink: resumeLink
