@@ -46,7 +46,7 @@ const Register = () => {
 
         const passwordValidation = validatePassword(password);
         if (passwordValidation !== true) {
-            console.log(passwordValidation);
+            // console.log(passwordValidation);
             return;
         }
 
@@ -75,7 +75,7 @@ const Register = () => {
                     })
             })
             .catch(error => {
-                console.error(error)
+                // console.error(error)
             })
     }
 

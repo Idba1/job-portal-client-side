@@ -12,9 +12,9 @@ const Modal = ({ onClose, deadline, loggedInUserInfo }) => {
     const navigate = useNavigate()
     const isEmailMatch = () => {
         const userEmail = user?.email;
-        console.log(userEmail);
+        // console.log(userEmail);
         const postEmail = loggedInUserInfo?.email;
-        console.log(postEmail);
+        // console.log(postEmail);
         return userEmail === postEmail;
     };
 
@@ -54,7 +54,7 @@ const Modal = ({ onClose, deadline, loggedInUserInfo }) => {
                 email: email,
                 resumeLink: resumeLink
             });
-            console.log('Server response:', response.data);
+            // console.log('Server response:', response.data);
             Swal.fire({
                 icon: 'success',
                 title: 'Success!',
@@ -63,7 +63,7 @@ const Modal = ({ onClose, deadline, loggedInUserInfo }) => {
             onClose();
             navigate('/applied-jobs')
         } catch (error) {
-            console.error('Error sending data:', error);
+            // console.error('Error sending data:', error);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',

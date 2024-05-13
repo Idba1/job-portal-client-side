@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllJob = () => {
 
     const alljob = useLoaderData();
-    console.log(alljob);
+    // console.log(alljob);
 
 
     const [searchTittle, setSearchTittle] = useState('');

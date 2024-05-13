@@ -35,7 +35,7 @@ const MyJob = () => {
             const { data } = await axios.delete(
                 `${import.meta.env.VITE_API_URL}/job/${id}`
             )
-            console.log(data)         
+            // console.log(data)         
             Swal.fire({
                 icon: 'success',
                 title: 'Success!',
@@ -43,7 +43,7 @@ const MyJob = () => {
             });
             getData()
         } catch (err) {
-            console.log(err.message)
+            // console.log(err.message)
             Swal.fire({
                 icon: "error",
                 title: "Oops...",

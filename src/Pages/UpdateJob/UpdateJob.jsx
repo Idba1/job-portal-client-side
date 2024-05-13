@@ -46,7 +46,7 @@ const UpdateJob = () => {
         `${import.meta.env.VITE_API_URL}/job/${_id}`,
         jobData
       )
-      console.log(data)
+      // console.log(data)
       Swal.fire({
         icon: 'success',
         title: 'Success!',
@@ -54,7 +54,7 @@ const UpdateJob = () => {
     });
       navigate('/my-jobs')
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       Swal.fire({
         icon: "error",
         title: "Oops...",

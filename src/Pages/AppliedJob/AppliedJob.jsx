@@ -15,7 +15,7 @@ const AppliedJob = () => {
         }
         getData()
     }, [user])
-    console.log(jobs);
+    // console.log(jobs);
 
 
     return (
