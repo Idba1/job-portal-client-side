@@ -16,7 +16,7 @@ const Slider = () => {
                 }
                 `}
             </style>
-            <div className="carousel w-full relative h-screen">
+            <div className="carousel w-full relative h-[35rem]">
                 <div id="item1" className="carousel-item w-full relative">
                     <div className="text-wrapper h-100vh">
                         <Typewriter
@@ -25,7 +25,7 @@ const Slider = () => {
                             loop={Infinity}
                         />
                     </div>
-                    <img  src="https://i.ibb.co/ynLtcnH/download.webp" className="w-full h-100vh" alt="Banner 2" />
+                    <img  src="https://i.ibb.co/dWJMDtJ/pexels-photo-1714205.webp" className="w-full h-100vh" alt="Banner 2" />
                 </div>
                 <div id="item2" className="carousel-item w-full relative">
                     <div className="text-wrapper">
@@ -35,7 +35,7 @@ const Slider = () => {
                             loop={Infinity}
                         />
                     </div>
-                    <img src="https://i.ibb.co/mvXRYb7/istockphoto-1337405813-612x612.jpg" className="w-full" alt="Banner 6" />
+                    <img src="https://i.ibb.co/3y9zNL5/pexels-photo-796602.webp" className="w-full" alt="Banner 6" />
                 </div>
                 <div id="item3" className="carousel-item w-full relative">
                     <div className="text-wrapper">
@@ -45,7 +45,7 @@ const Slider = () => {
                             loop={Infinity}
                         />
                     </div>
-                    <img src="https://i.ibb.co/PxBj1Qw/download-1.jpg" className="w-full" alt="Banner 3" />
+                    <img src="https://i.ibb.co/mX72VWH/desk-2852986-640.jpg" className="w-full" alt="Banner 3" />
                 </div>
                 <div id="item4" className="carousel-item w-full relative">
                     <div className="text-wrapper">
@@ -55,7 +55,7 @@ const Slider = () => {
                             loop={Infinity}
                         />
                     </div>
-                    <img src="https://i.ibb.co/PxBj1Qw/download-1.jpg" className="w-full" alt="Banner 4" />
+                    <img src=" https://i.ibb.co/KmjNZXR/pexels-photo-8960464.webp" className="w-full" alt="Banner 4" />
                 </div>
             </div>
             <div className="flex justify-center w-full py-2 gap-2">
