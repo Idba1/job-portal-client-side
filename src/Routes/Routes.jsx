@@ -12,6 +12,8 @@ import MyJob from '../Pages/MyJob/MyJob';
 import JobDetails from '../Pages/JobDetails.jsx/JobDetails';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateJob from '../Pages/UpdateJob/UpdateJob';
+import Career from '../Pages/Career/Career';
+import BlogDetails from '../Pages/BlogDetails/BlogDetails';
 
 const Routes = createBrowserRouter([
     {
@@ -37,6 +39,7 @@ const Routes = createBrowserRouter([
                 element: <AllJob></AllJob>,
                 loader: () => fetch(`${import.meta.env.VITE_API_URL}/alljob`)
             },
+
             {
                 path: '/job/:id',
                 element: <PrivateRoute>
@@ -74,6 +77,18 @@ const Routes = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <BlogPage></BlogPage>,
+            },
+
+            {
+                path: '/career-blog',
+                element: <Career></Career>,
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/career-blog`)
+            },
+            {
+                path: '/career-blog/:id',
+                element:
+                    <BlogDetails></BlogDetails>,
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/career-blog/${params.id}`)
             },
 
         ],

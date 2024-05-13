@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Slider from "../Slider/Slider";
 import TabSection from "../Tabs/TabSection";
 import Fquestion from "../../Pages/Queastion/Fquestion";
+// import Career from "../../Pages/Career/Career";
 
 const Home = () => {
     const alljob = useLoaderData();
@@ -11,6 +12,7 @@ const Home = () => {
             <Slider></Slider>
             <TabSection alljob={alljob}></TabSection>
             <Fquestion></Fquestion>
+            {/* <Career></Career> */}
         </div>
     );
 };
