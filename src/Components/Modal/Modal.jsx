@@ -2,13 +2,14 @@ import { useContext, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Modal = ({ onClose, deadline, loggedInUserInfo }) => {
     const { user } = useContext(AuthContext)
     const [resumeLink, setResumeLink] = useState('');
     const [email, setEmail] = useState(user?.email || 'user@email.com');
     const [name, setName] = useState(user?.displayName || 'user');
-
+    const navigate = useNavigate()
     const isEmailMatch = () => {
         const userEmail = user?.email;
         console.log(userEmail);
@@ -60,6 +61,7 @@ const Modal = ({ onClose, deadline, loggedInUserInfo }) => {
                 text: 'Your application has been submitted successfully!',
             });
             onClose();
+            navigate('/applied-jobs')
         } catch (error) {
             console.error('Error sending data:', error);
             Swal.fire({

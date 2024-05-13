@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Modal from '../../Components/Modal/Modal';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, } from 'react-router-dom';
 
 const JobDetails = () => {
     const job = useLoaderData()
     // console.log(job);
-    const { _id, bannerUrl, category, description, loggedInUserInfo, name, title, postingDate, deadline, salaryRange, applicantsNumber } = job;
+    const { bannerUrl, category, description, loggedInUserInfo, title, postingDate, deadline, salaryRange, applicantsNumber } = job;
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [price, setPrice] = useState('');
     const [email, setEmail] = useState('');
@@ -13,6 +13,7 @@ const JobDetails = () => {
 
     const handleApplyClick = () => {
         setIsModalOpen(true);
+        
     };
 
     const closeModal = () => {
@@ -23,6 +24,7 @@ const JobDetails = () => {
         e.preventDefault();
         // 
         setIsModalOpen(false);
+       
     };
 
     return (
