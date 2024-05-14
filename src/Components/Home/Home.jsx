@@ -3,6 +3,7 @@ import TabSection from "../Tabs/TabSection";
 import Fquestion from "../../Pages/Queastion/Fquestion";
 import Career from "../../Pages/Career/Career";
 import { useState, useEffect } from 'react';
+import SuccessStory from "../../Pages/SuccessStory/SuccessStory";
 
 
 const Home = () => {
@@ -35,6 +36,7 @@ const Home = () => {
             <TabSection alljob={alljob}></TabSection>
             <Career blogs={blogs}></Career>
             <Fquestion></Fquestion>
+            <SuccessStory></SuccessStory>
         </div>
     );
 };

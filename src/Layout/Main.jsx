@@ -7,7 +7,7 @@ const Main = () => {
     return (
         <div className="container  mx-auto">
             <Navbar></Navbar>
-            <div className="min-h-[calc(100vh-250px)] mt-2 lg:mt-20 " >
+            <div className=" min-h-[calc(100vh-250px)] mt-20 " >
                 <Outlet ></Outlet>
             </div>
             <div className="mt-4 md:mt-6 lg:mt-12">

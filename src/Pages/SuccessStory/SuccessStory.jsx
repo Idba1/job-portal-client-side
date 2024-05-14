@@ -1,123 +1,120 @@
-import { useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const SuccessStory = () => {
-    useEffect(() => {
-        const intervalId = setInterval(scrollCards, 3000);
+    const stories = [
 
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, []);
+        {
+            id: 1,
+            imageUrl: 'https://i.ibb.co/1rQ7SkN/pexels-photo-1674752.webp',
+            name: 'John Doe',
+            companyName: 'TechSolutions Inc.',
+        },
+        {
+            id: 2,
+            imageUrl: 'https://i.ibb.co/XXdPFNT/pexels-photo-2379005.jpg',
+            name: 'Jane Smith',
+            companyName: 'GlobalTech Ltd.',
+        },
+        {
+            id: 3,
+            imageUrl: 'https://i.ibb.co/3pvyPq7/pexels-photo-774909.webp',
+            name: 'Michael Johnson',
+            companyName: 'Innovate Systems',
+        },
+        {
+            id: 4,
+            imageUrl: 'https://i.ibb.co/rGZj9yN/pexels-photo-1680172.webp',
+            name: 'Emily Brown',
+            companyName: 'WebWorks Solutions',
+        },
+        {
+            id: 5,
+            imageUrl: 'https://i.ibb.co/gZmtr83/pexels-photo-91227.webp',
+            name: 'David Wilson',
+            companyName: 'DataDriven Enterprises',
+        },
+        {
+            id: 6,
+            imageUrl: 'https://i.ibb.co/2dTfr42/pexels-photo-762020.webp',
+            name: 'Sarah Martinez',
+            companyName: 'SmartSoft Innovations',
+        },
+        {
+            id: 7,
+            imageUrl: 'https://i.ibb.co/s98GyMd/pexels-photo-3768894.webp',
+            name: 'Robert Taylor',
+            companyName: 'TechBridge Solutions',
+        },
+        {
+            id: 8,
+            imageUrl: 'https://i.ibb.co/0GMRFss/pexels-photo-2379004.jpg',
+            name: 'Jennifer Lee',
+            companyName: 'DataStream Technologies',
+        },
+        {
+            id: 9,
+            imageUrl: 'https://i.ibb.co/SfcxwhC/pexels-photo-3727463.webp',
+            name: 'William Clark',
+            companyName: 'CloudWorks Innovations',
+        },
+        {
+            id: 10,
+            imageUrl: 'https://i.ibb.co/2dTfr42/pexels-photo-762020.webp',
+            name: 'Amanda Rodriguez',
+            companyName: 'AgileTech Solutions',
+        },
+    ];
+
+    const containerRef = useRef(null);
 
     const scrollCards = () => {
-        const cardContainer = document.querySelector('.card-container');
-        cardContainer.appendChild(cardContainer.firstElementChild.cloneNode(true));
-        cardContainer.removeChild(cardContainer.firstElementChild);
+        if (containerRef.current) {
+            const container = containerRef.current;
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+                container.scrollLeft = 0;
+            } else {
+                container.scrollLeft += 2;
+            }
+        }
     };
 
+    useEffect(() => {
+        const interval = setInterval(scrollCards, 50);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
-        <div className="container">
-            <AnimatePresence initial={false}>
-                <motion.div
-                    className="flex card-container"
-                    layout
-                    key="card-container"
-                >
-                   
-                    <motion.div className="card" key="card-2">
-                        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                            <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)' }}></div>
+        <div className='my-10 md:my-14 lg:my-20'>
+            <div className="">
+                <h2 className="text-2xl text-center font-semibold sm:text-4xl text-[#0077B5]">Heroes In Top Companies_</h2>
+                <p className="mt-4 text-center mb-8 dark:text-sky-950"> Unveiling the stories of exceptional individuals from industry-leading <br /> organizations, motivating job seekers on JobNest.</p>
+            </div>
+            <div className="overflow-hidden relative">
+                <div className="flex" ref={containerRef} style={{ minHeight: '100%', whiteSpace: 'nowrap', overflowX: 'hidden' }}>
+                    {stories.map((story) => (
+                        <motion.div
+                            key={story.id}
+                            className="inline-block w-full max-w-sm mx-auto my-4"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            style={{ display: 'inline-block', margin: '0 10px' }}
+                        >
+                            <motion.div
+                                className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
+                                style={{ backgroundImage: `url(${story.imageUrl})` }}
+                            ></motion.div>
 
                             <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                                <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Nike Revolt</h3>
-
-                                <div className="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                                    <span className="font-bold text-gray-800 dark:text-gray-200">$129</span>
-                                    <button className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add to cart</button>
-                                </div>
+                                <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">{story.name}</h3>
+                                <p className="px-3 py-2 text-center text-gray-700 dark:text-gray-300">{` ${story.companyName}`}</p>
                             </div>
-                        </div>
-                    </motion.div>
-
-                  
-                    <motion.div className="card" key="card-3">
-                        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                            <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)' }}></div>
-
-                            <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                                <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Nike Revolt</h3>
-
-                                <div className="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                                    <span className="font-bold text-gray-800 dark:text-gray-200">$129</span>
-                                    <button className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                    <motion.div className="card" key="card-3">
-                        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                            <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)' }}></div>
-
-                            <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                                <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Nike Revolt</h3>
-
-                                <div className="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                                    <span className="font-bold text-gray-800 dark:text-gray-200">$129</span>
-                                    <button className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                    <motion.div className="card" key="card-3">
-                        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                            <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)' }}></div>
-
-                            <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                                <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Nike Revolt</h3>
-
-                                <div className="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                                    <span className="font-bold text-gray-800 dark:text-gray-200">$129</span>
-                                    <button className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                    <motion.div className="card" key="card-3">
-                        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                            <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)' }}></div>
-
-                            <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                                <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Nike Revolt</h3>
-
-                                <div className="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                                    <span className="font-bold text-gray-800 dark:text-gray-200">$129</span>
-                                    <button className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                    <motion.div className="card" key="card-3">
-                        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                            <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)' }}></div>
-
-                            <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                                <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Nike Revolt</h3>
-
-                                <div className="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                                    <span className="font-bold text-gray-800 dark:text-gray-200">$129</span>
-                                    <button className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                   
-                    {/* Add more cards as needed */}
-                </motion.div>
-            </AnimatePresence>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };
-
 
 export default SuccessStory;
