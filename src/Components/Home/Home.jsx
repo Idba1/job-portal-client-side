@@ -4,6 +4,7 @@ import Fquestion from "../../Pages/Queastion/Fquestion";
 import Career from "../../Pages/Career/Career";
 import { useState, useEffect } from 'react';
 import SuccessStory from "../../Pages/SuccessStory/SuccessStory";
+import Newsletter from "../../Pages/Newsletter/Newsletter";
 
 
 const Home = () => {
@@ -37,6 +38,7 @@ const Home = () => {
             <Career blogs={blogs}></Career>
             <Fquestion></Fquestion>
             <SuccessStory></SuccessStory>
+            <Newsletter></Newsletter>
         </div>
     );
 };
