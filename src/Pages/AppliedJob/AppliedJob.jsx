@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import axios from "axios";
+import AppliedPdf from "./AppliedPdf";
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
+
 
 const AppliedJob = () => {
     const { user } = useContext(AuthContext)
@@ -15,16 +18,16 @@ const AppliedJob = () => {
         }
         getData()
     }, [user])
-    // console.log(jobs);
+    console.log(jobs);
 
 
     return (
 
         <div>
-            <div className="">
+            <div className="border-b-orange-950 mb-0">
                 <div className=" items-center justify-between">
                     <h2 className="text-center mt-7 lg:mt-28 text-2xl tracking-tighter text-sky-700 font-bold">
-                    Track Your Career Progress
+                        Track Your Career Progress
                     </h2>
                     <div className="space-x-2 text-center text-sky-950 py-2 lg:py-0">
                         <p>Stay organized and informed with JobNest's Applied Jobs feature. <br /> Keep track of your job applications and monitor your career journey effortlessly.</p>
@@ -39,7 +42,7 @@ const AppliedJob = () => {
                         src="https://i.ibb.co/Hhg3skQ/pexels-photo-3937174.webp" alt="Image 5" />
                 </div>
 
-                <section className='container px-4 mx-auto pt-12'>
+                <section className='px-4 mx-auto pt-12'>
                     <div className='flex items-center gap-x-3'>
                         <h2 className='text-lg font-medium text-sky-700 '>Your Applied Job</h2>
 
@@ -48,7 +51,7 @@ const AppliedJob = () => {
                         </span>
                     </div>
 
-                    <div className='flex flex-col mt-6'>
+                    <div className='flex flex-col mb-0 mt-6'>
                         <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
                             <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
                                 <div className='overflow-hidden border border-gray-200  md:rounded-lg'>
@@ -108,8 +111,32 @@ const AppliedJob = () => {
                     </div >
                 </section >
             </div>
+
+
+            <div className=" top-7">
+                <PDFViewer className="mx-auto" style={{ width: '50%', height: '500px' }}>
+                    <AppliedPdf jobs={jobs} />
+                </PDFViewer>
+
+
+
+                <div className="my-0 text-center mt-4">
+                    <PDFDownloadLink
+                        document={<AppliedPdf jobs={jobs} />}
+                        fileName="applied_jobs_summary.pdf"
+                    >
+                        <button className='top-0 my-0 px-8 btn py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-sky-600 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                            Download Summary
+                            {({ loading }) =>
+                                loading ? 'Loading document...' : 'Download Summary'
+                            }
+                        </button>
+                    </PDFDownloadLink>
+
+                </div>
             </div>
-            )
+        </div>
+    )
 };
 
-            export default AppliedJob;
+export default AppliedJob;
