@@ -33,14 +33,13 @@ const LogIn = () => {
 
     return (
         <div className="bg-white dark:bg-gray-300">
-            <div className="bg-white dark:bg-gray-200">
-              
+            <div className="flex flex-col-reverse lg:flex-row bg-white dark:bg-gray-200 p-7">
 
-                <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
+                <div className="items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
                     <div className="flex-1">
                         <div className="text-center">
-                            <div  className="bg-cover md:block md:w-2/5 lg:block lg:w-2/5" >
-                                <img className="w-auto h-7 sm:h-8" src="https://i.ibb.co/hZ9VcF6/logo.png" alt="" />
+                            <div  className="" >
+                                <img className="w-20 lg:w-36 h-12 lg:h-20 mx-auto" src="https://i.ibb.co/hZ9VcF6/logo.png" alt="" />
                             </div>
                             <p className="mt-3 text-sky-700 dark:text-sky-700">Log In to Your Account</p>
                         </div>
@@ -77,7 +76,8 @@ const LogIn = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-cover md:block md:w-2/5 lg:block lg:w-1/2" style={{ backgroundImage: "url(https://i.ibb.co/0jvdLRX/pexels-photo-4065892.webp)" }}>
+
+                <div className="bg-cover md:block md:w-2/5 lg:block lg:w-2/5" style={{ backgroundImage: "url(https://i.ibb.co/0jvdLRX/pexels-photo-4065892.webp)" }}>
                     <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                         <div>
                             <h2 className="text-2xl font-bold text-white sm:text-3xl">Log In to Your Account</h2>
@@ -87,6 +87,7 @@ const LogIn = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );
