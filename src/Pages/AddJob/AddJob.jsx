@@ -5,6 +5,10 @@ import 'react-datepicker/dist/react-datepicker.css'
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const AddJob = () => {
     const [startDate, setStartDate] = useState(new Date())
@@ -62,7 +66,7 @@ const AddJob = () => {
 
     return (
         <div className='flex flex-col lg:flex-row  justify-center items-center min-h-[calc(100vh-306px)] my-12 lg:my-20 '>
-            <img className="mb-8 md:mb-32 lg:mb-40" src="https://i.ibb.co/DpYgmbc/pexels-photo-68761.jpg" alt="" />
+            <img data-aos="zoom-in" data-aos-duration="2000" className="mb-8 md:mb-32 lg:mb-40" src="https://i.ibb.co/DpYgmbc/pexels-photo-68761.jpg" alt="" />
 
             <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-md '>
                 <h2 className='text-lg font-semibold text-sky-700 text-center capitalize '>
