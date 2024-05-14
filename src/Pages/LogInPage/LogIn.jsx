@@ -33,13 +33,13 @@ const LogIn = () => {
 
     return (
         <div className="bg-white dark:bg-gray-300">
-            <div className="flex justify-center h-screen">
+            <div className="bg-white dark:bg-gray-200">
               
 
                 <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
                     <div className="flex-1">
                         <div className="text-center">
-                            <div className="flex justify-center mx-auto">
+                            <div  className="bg-cover md:block md:w-2/5 lg:block lg:w-2/5" >
                                 <img className="w-auto h-7 sm:h-8" src="https://i.ibb.co/hZ9VcF6/logo.png" alt="" />
                             </div>
                             <p className="mt-3 text-sky-700 dark:text-sky-700">Log In to Your Account</p>
