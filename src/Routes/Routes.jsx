@@ -14,6 +14,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateJob from '../Pages/UpdateJob/UpdateJob';
 import Career from '../Pages/Career/Career';
 import BlogDetails from '../Pages/BlogDetails/BlogDetails';
+import SuccessStory from '../Pages/SuccessStory/SuccessStory';
 
 const Routes = createBrowserRouter([
     {
@@ -90,6 +91,10 @@ const Routes = createBrowserRouter([
                 element:
                     <BlogDetails></BlogDetails>,
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/career-blog/${params.id}`)
+            },
+            {
+                path: '/success',
+                element: <SuccessStory></SuccessStory>,
             },
 
         ],
