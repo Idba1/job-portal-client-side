@@ -1,5 +1,29 @@
+import  { useState } from 'react';
 
 const Newsletter = () => {
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubscribe = async () => {
+        try {
+            const response = await fetch('http://localhost:9000/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setMessage(data.message);
+            } else {
+                setMessage(data.error);
+            }
+        } catch (error) {
+            setMessage('An error occurred. Please try again.');
+        }
+    };
+
     return (
         <div className="lg:my-20 my-10">
             <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
@@ -10,10 +34,23 @@ const Newsletter = () => {
                     </div>
                     <div className="flex flex-row items-center self-center justify-center flex-shrink-0 shadow-md lg:justify-end">
                         <div className="flex flex-row">
-                            <input type="text" placeholder="example@email.com" className="w-3/5 p-3 rounded-l-lg sm:w-2/3" />
-                            <button type="button" className="self-center font-bold px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75  hover:dark:border-sky-950 hover:dark:bg-sky-100 hover:dark:text-sky-950 dark:text-gray-50 focus:dark:ring-sky-200 dark:ring-sky-950 dark:bg-sky-800">Subscribe</button>
+                            <input 
+                                type="text" 
+                                placeholder="example@email.com" 
+                                className="w-3/5 p-3 rounded-l-lg sm:w-2/3" 
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <button 
+                                type="button" 
+                                className="self-center font-bold px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 hover:dark:border-sky-950 hover:dark:bg-sky-100 hover:dark:text-sky-950 dark:text-gray-50 focus:dark:ring-sky-200 dark:ring-sky-950 dark:bg-sky-800"
+                                onClick={handleSubscribe}
+                            >
+                                Subscribe
+                            </button>
                         </div>
                     </div>
+                    {message && <p>{message}</p>}
                 </div>
             </section>
         </div>
