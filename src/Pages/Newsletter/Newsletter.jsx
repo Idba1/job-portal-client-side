@@ -6,7 +6,7 @@ const Newsletter = () => {
 
     const handleSubscribe = async () => {
         try {
-            const response = await fetch('http://localhost:9000/subscribe', {
+            const response = await fetch('https://job-nest-server-zeta.vercel.app/subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
