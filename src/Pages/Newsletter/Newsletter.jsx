@@ -1,4 +1,5 @@
-import  { useState } from 'react';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const Newsletter = () => {
     const [email, setEmail] = useState('');
@@ -17,10 +18,22 @@ const Newsletter = () => {
             if (response.ok) {
                 setMessage(data.message);
             } else {
-                setMessage(data.error);
+
+                Swal.fire({
+                    title: "update!",
+                    text: data.error,
+                    imageUrl: "https://i.ibb.co/Fn1PqGq/download-5.png",
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: "Custom image"
+                });
             }
         } catch (error) {
-            setMessage('An error occurred. Please try again.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'An error occurred. Please try again.',
+            });
         }
     };
 
@@ -34,15 +47,15 @@ const Newsletter = () => {
                     </div>
                     <div className="flex flex-row items-center self-center justify-center flex-shrink-0 shadow-md lg:justify-end">
                         <div className="flex flex-row">
-                            <input 
-                                type="text" 
-                                placeholder="example@email.com" 
-                                className="w-3/5 p-3 rounded-l-lg sm:w-2/3" 
+                            <input
+                                type="text"
+                                placeholder="example@email.com"
+                                className="w-3/5 p-3 rounded-l-lg sm:w-2/3"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <button 
-                                type="button" 
+                            <button
+                                type="button"
                                 className="self-center font-bold px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 hover:dark:border-sky-950 hover:dark:bg-sky-100 hover:dark:text-sky-950 dark:text-gray-50 focus:dark:ring-sky-200 dark:ring-sky-950 dark:bg-sky-800"
                                 onClick={handleSubscribe}
                             >
