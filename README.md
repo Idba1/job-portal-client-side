@@ -1,12 +1,26 @@
-assignment_category_0003
+# JobNest
 
 Website Name : JobNest
 
 Live Site URL: https://jobnest100.netlify.app/
 
-Features:
-- Comprehensive Job Listings: Access a diverse range of job opportunities categorized into On-Site, Remote, Hybrid, and Part-Time roles.
-- Intuitive User Interface: Navigate seamlessly through the website with a user-friendly interface designed for easy exploration and interaction.
-- Personalized Experience: Customize your job search experience with personalized profiles, allowing you to track applied jobs, manage listings, and receive relevant recommendations.
-- Secure Authentication: Ensure data security with robust authentication systems, safeguarding user information and privacy throughout the platform.
-- Responsive Design: Enjoy a consistent experience across all devices, including desktops, tablets, and mobile phones, with responsive design ensuring optimal viewing and usability.
+## Project Overview
+JobNest is a comprehensive job listing platform that provides users with access to a diverse range of job opportunities, categorized into On-Site, Remote, Hybrid, and Part-Time roles. The project aims to simplify the job search process by offering a user-friendly interface and personalized experience, ensuring data security and a consistent experience across all devices.
+
+## Features
+- **Comprehensive Job Listings:** Access a variety of job opportunities categorized into On-Site, Remote, Hybrid, and Part-Time roles.
+- **Personalized Experience:** Track applied jobs, manage listings, and receive relevant recommendations through personalized profiles.
+- **Secure Authentication:** Ensure data security with robust authentication systems, safeguarding user information and privacy.
+
+## Technologies Used
+- React
+- Firebase
+- Tailwind CSS
+- MongoDB
+
+## How to Run Locally
+1. Clone the repository: `https://github.com/Idba1/job-portal-client-side.git`
+2. Navigate to the project directory: `cd jobnest`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Firebase API KEY
