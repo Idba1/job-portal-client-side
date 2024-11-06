@@ -42,7 +42,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className="z-50 bg-white">
+        <div className="z-50 bg-white container mx-auto">
             <nav className={isSticky ? 'navbar fixed' : 'navbar' }>
                 <div className="navbar z-10  shadow-lgn">
                     <div className="navbar-start">
