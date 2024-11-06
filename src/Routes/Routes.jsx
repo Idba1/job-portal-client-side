@@ -10,11 +10,11 @@ import AppliedJob from '../Pages/AppliedJob/AppliedJob';
 import AddJob from '../Pages/AddJob/AddJob';
 import MyJob from '../Pages/MyJob/MyJob';
 import JobDetails from '../Pages/JobDetails.jsx/JobDetails';
-import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateJob from '../Pages/UpdateJob/UpdateJob';
 import Career from '../Pages/Career/Career';
 import BlogDetails from '../Pages/BlogDetails/BlogDetails';
 import SuccessStory from '../Pages/SuccessStory/SuccessStory';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const Routes = createBrowserRouter([
     {

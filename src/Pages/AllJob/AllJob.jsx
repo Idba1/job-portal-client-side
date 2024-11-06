@@ -1,7 +1,10 @@
-import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 const AllJob = () => {
+    const { user } = useContext(AuthContext)
+    const navigate = useNavigate();
 
     const alljob = useLoaderData();
     // console.log(alljob);
@@ -24,7 +27,7 @@ const AllJob = () => {
                         <div className="mb-10">
                             <h1 className="text-center text-2xl tracking-tighter text-sky-700 font-bold">If you locking any specific job! Search here...</h1>
                             <input
-                               className="block mx-auto w-full h-16 max-w-lg px-4 py-2 mt-4 text-gray-800 placeholder-gray-400 bg-gray-100 border border-gray-300 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+                                className="block mx-auto w-full h-16 max-w-lg px-4 py-2 mt-4 text-gray-800 placeholder-gray-400 bg-gray-100 border border-gray-300 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
 
                                 type="text"
                                 placeholder="Search by Job Title"
@@ -41,9 +44,9 @@ const AllJob = () => {
 
 
                 <div className="mx-0 container">
-                    <table>
+                    <table className="space-y-20">
                         <thead>
-                            <tr>
+                            <tr className="mb-9">
                                 <th>Job Title</th>
                                 <th>Job Posting Date</th>
                                 <th>Application Deadline</th>
@@ -51,15 +54,18 @@ const AllJob = () => {
                                 <th>Details</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="space-y-20">
                             {filteredJobs.map(job => (
-                                <tr key={job.id}>
+                                <tr className="mb-9" key={job.id}>
                                     <td>{job.title}</td>
                                     <td>{job.postingDate}</td>
                                     <td>{job.deadline}</td>
                                     <td>{job.salaryRange}</td>
                                     <td>
                                         <Link to={`/job/${job._id}`}> <button className="btn hover:dark:bg-sky-700 hover:dark:text-sky-50">View Details</button></Link>
+                                        {/* {
+                                            user ? <Link to={`/job/${job._id}`}> <button className="btn hover:dark:bg-sky-700 hover:dark:text-sky-50">View Details</button></Link> : navigate('/login')
+                                        } */}
                                     </td>
                                 </tr>
                             ))}
