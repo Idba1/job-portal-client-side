@@ -48,14 +48,14 @@ const LogIn = () => {
                             <form onSubmit={handleSubmit(onSubmit)} >
                                 <div>
                                     <label htmlFor="email" className="block mb-2 text-sm text-sky-700 dark:text-sky-700">Email Address</label>
-                                    <input type="text" name="email" id="email" placeholder="email" className="block w-full px-4 py-2 mt-2 text-sky-700 placeholder-sky-700 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-sky-700 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" {...register("email", { required: true })}
+                                    <input type="text" name="email" id="email" placeholder="email" className="block w-full px-4 py-2 mt-2 text-sky-700 placeholder-sky-700 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600  dark:text-sky-700 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" {...register("email", { required: true })}
                                     />
                                     {errors.email && (
                                         <span className="text-red-500">This field is required</span>
                                     )}
                                     <div className="mt-6">
 
-                                        <input  type="password" name="password" id="password" placeholder="Password" className="block w-full px-4 py-2 mt-2 text-sky-700 placeholder-sky-700 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-sky-700 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"   {...register("password", { required: true })}
+                                        <input  type="password" name="password" id="password" placeholder="Password" className="block w-full px-4 py-2 mt-2 text-sky-700 placeholder-sky-700 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600  dark:text-sky-700 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"   {...register("password", { required: true })}
                                         />
                                         {errors.password && (
                                             <span className="text-red-500">This field is required</span>

@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+// import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -104,7 +104,7 @@ const Register = () => {
                             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
                                 <div>
                                     <label className="block mb-2 text-sm text-sky-950 dark:text-sky-950">Name</label>
-                                    <input type="text" name="username" id="username" placeholder="your name" className="block w-full px-5 py-3 mt-2 text-sky-950 placeholder-gray-950 bg-white border border-gray-950 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-sky-300 dark:border-gray-700 focus:border-blue-950 dark:focus:border-blue-950 focus:ring-blue-950 focus:outline-none focus:ring focus:ring-opacity-40"  {...register("FullName", { required: true })}
+                                    <input type="text" name="username" id="username" placeholder="your name" className="block w-full px-5 py-3 mt-2 text-sky-950 placeholder-gray-950 bg-white border border-gray-950 rounded-lg dark:placeholder-gray-600   dark:border-gray-700 focus:border-blue-950 dark:focus:border-blue-950 focus:ring-blue-950 focus:outline-none focus:ring focus:ring-opacity-40"  {...register("FullName", { required: true })}
                                     />
                                     {errors.FullName && (
                                         <span className="text-red-500">This field is required</span>
@@ -114,7 +114,7 @@ const Register = () => {
 
                                 <div>
                                     <label className="block mb-2 text-sm text-sky-950 dark:text-sky-950">Photo URL</label>
-                                    <input type="text" name="photo_url" id="photo_url" placeholder="photo_url" className="block w-full px-5 py-3 mt-2 text-sky-950 placeholder-gray-950 bg-white border border-gray-950 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-sky-300 dark:border-gray-700 focus:border-blue-950 dark:focus:border-blue-950 focus:ring-blue-950 focus:outline-none focus:ring focus:ring-opacity-40"  {...register("photo_url", { required: true })}
+                                    <input type="text" name="photo_url" id="photo_url" placeholder="photo_url" className="block w-full px-5 py-3 mt-2 text-sky-950 placeholder-gray-950 bg-white border border-gray-950 rounded-lg dark:placeholder-gray-600   dark:border-gray-700 focus:border-blue-950 dark:focus:border-blue-950 focus:ring-blue-950 focus:outline-none focus:ring focus:ring-opacity-40"  {...register("photo_url", { required: true })}
                                     />
                                     {errors.photo_url && (
                                         <span className="text-red-500">This field is required</span>
@@ -124,7 +124,7 @@ const Register = () => {
 
                                 <div>
                                     <label className="block mb-2 text-sm text-sky-950 dark:text-sky-950">Email address</label>
-                                    <input type="email"  name="email" id="email" placeholder="email" className="block w-full px-5 py-3 mt-2 text-sky-950 placeholder-gray-950 bg-white border border-gray-950 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-sky-300 dark:border-gray-700 focus:border-blue-950 dark:focus:border-blue-950 focus:ring-blue-950 focus:outline-none focus:ring focus:ring-opacity-40"  {...register("email", { required: true })}
+                                    <input type="email"  name="email" id="email" placeholder="email" className="block w-full px-5 py-3 mt-2 text-sky-950 placeholder-gray-950 bg-white border border-gray-950 rounded-lg dark:placeholder-gray-600   dark:border-gray-700 focus:border-blue-950 dark:focus:border-blue-950 focus:ring-blue-950 focus:outline-none focus:ring focus:ring-opacity-40"  {...register("email", { required: true })}
                                     />
                                     {errors.email && (
                                         <span className="text-red-500">This field is required</span>
@@ -133,12 +133,12 @@ const Register = () => {
 
                                 <div>
                                     <label className="block mb-2 text-sm text-sky-950 dark:text-sky-950">Password</label>
-                                    <input type={showPassword ? "text" : "password"}name="password" id="password" placeholder="Password" className="block w-full px-5 py-3 mt-2 text-sky-950 placeholder-gray-950 bg-white border border-gray-950 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-sky-300 dark:border-gray-700 focus:border-blue-950 dark:focus:border-blue-950 focus:ring-blue-950 focus:outline-none focus:ring focus:ring-opacity-40"  {...register("password", { required: true })}
+                                    <input type={showPassword ? "text" : "password"}name="password" id="password" placeholder="Password" className="block w-full px-5 py-3 mt-2 text-sky-950 placeholder-gray-950 bg-white border border-gray-950 rounded-lg dark:placeholder-gray-600   dark:border-gray-700 focus:border-blue-950 dark:focus:border-blue-950 focus:ring-blue-950 focus:outline-none focus:ring focus:ring-opacity-40"  {...register("password", { required: true })}
                                     />
                                     <span className="absolute top-96 right-24" onClick={() => setShowPassword(!showPassword)}>
-                                        {
+                                        {/* {
                                             showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
-                                        }
+                                        } */}
                                     </span>
                                     {errors.password && (
                                         <span className="text-red-500">This field is required</span>
