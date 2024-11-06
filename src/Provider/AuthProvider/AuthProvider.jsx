@@ -6,6 +6,7 @@ import {
     signInWithEmailAndPassword,
     signInWithPopup,
     signOut,
+    updateProfile,
 } from 'firebase/auth';
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
@@ -24,6 +25,19 @@ const AuthProvider = ({ children }) => {
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
+    };
+
+    // update
+    const updateUserProfile = (profileData) => {
+        if (auth.currentUser) {
+            return updateProfile(auth.currentUser, profileData)
+                .then(() => {
+                    setUser(auth.currentUser); 
+                })
+                .catch((error) => {
+                    console.error("Profile update error:", error);
+                });
+        }
     };
 
     // Sign in user with email and password
@@ -70,6 +84,7 @@ const AuthProvider = ({ children }) => {
         user,
         loading,
         logout,
+        updateUserProfile,
     };
 
     return (
