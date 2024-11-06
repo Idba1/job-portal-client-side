@@ -1,74 +1,86 @@
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, } from 'firebase/auth';
-import PropTypes from 'prop-types'
+import {
+    GithubAuthProvider,
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+} from 'firebase/auth';
+import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
 import auth from '../../Firebase/firebase.config';
-export const AuthContext = createContext(null)
 
+export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    // console.log(user);
+
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
 
-    // create user
+    // Create user with email and password
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
-
-    // sign in user
+    // Sign in user with email and password
     const signInUser = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 
-    // google
+    // Google login
     const googleLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     };
 
-    // github
+    // GitHub login
     const githubLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, githubProvider);
     };
 
-
-    //logout
+    // Logout
     const logout = () => {
-        setUser(null);
-        signOut(auth);
+        setLoading(true);
+        return signOut(auth).then(() => {
+            setUser(null);
+            setLoading(false);
+        });
     };
 
-    // ovserver
+    // Observer for auth state changes
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user);
-                setLoading(false);
-            }
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+            setLoading(false);
         });
+        return () => unsubscribe();
     }, []);
 
-    const allvalues = {
-        createUser, signInUser, googleLogin, githubLogin, user, loading, logout
-
+    const authValues = {
+        createUser,
+        signInUser,
+        googleLogin,
+        githubLogin,
+        user,
+        loading,
+        logout,
     };
+
     return (
-        <div>
-            <AuthContext.Provider value={allvalues}>
-                {children}
-            </AuthContext.Provider>
-        </div>
+        <AuthContext.Provider value={authValues}>
+            {children}
+        </AuthContext.Provider>
     );
 };
+
 AuthProvider.propTypes = {
-    children: PropTypes.object.isRequired,
-}
+    children: PropTypes.node.isRequired,
+};
 
 export default AuthProvider;
