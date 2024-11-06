@@ -17,11 +17,11 @@ const Slider = () => {
                 }
                 `}
             </style>
-            <div className="carousel w-full relative h-[35rem]">
+            <div className="carousel w-full relative h-auto lg:h-96">
                 <div id="item1" className="carousel-item w-full relative">
                     <div className="text-wrapper h-100vh">
                         <Typewriter
-                            words={['Hello Everyone. Welcome To JobNest!', 'JobNest connects job seekers with diverse onsite roles, fostering collaboration, growth, and career advancement opportunities.']}
+                            words={['Hello Everyone. Welcome To JobNest!']}
                             typeSpeed={80}
                             loop={Infinity}
                         />
@@ -31,7 +31,7 @@ const Slider = () => {
                 <div id="item2" className="carousel-item w-full relative">
                     <div className="text-wrapper">
                         <Typewriter
-                            words={['Hello Everyone. Welcome To JobNest!', 'JobNest offers remote job opportunities, allowing individuals to work from anywhere with flexibility and autonomy.']}
+                            words={['Hello Everyone. Welcome To JobNest!']}
                             typeSpeed={80}
                             loop={Infinity}
                         />
@@ -41,7 +41,7 @@ const Slider = () => {
                 <div id="item3" className="carousel-item w-full relative">
                     <div className="text-wrapper">
                         <Typewriter
-                            words={['Hello Everyone. Welcome To JobNest!', 'JobNest offers hybrid job opportunities, combining the flexibility of remote work with the collaboration of onsite presence. ']}
+                            words={['Hello Everyone. Welcome To JobNest!']}
                             typeSpeed={80}
                             loop={Infinity}
                         />
@@ -51,7 +51,7 @@ const Slider = () => {
                 <div id="item4" className="carousel-item w-full relative">
                     <div className="text-wrapper">
                         <Typewriter
-                            words={['Hello Everyone. Welcome To JobNest!', 'JobNest presents part-time job opportunities for individuals seeking flexible work arrangements. These roles allow for reduced hours, ideal for students, parents, or those seeking supplementary income. ']}
+                            words={['Hello Everyone. Welcome To JobNest!']}
                             typeSpeed={80}
                             loop={Infinity}
                         />
@@ -61,9 +61,9 @@ const Slider = () => {
             </div>
             <div className="flex justify-center w-full py-2 gap-2">
                 <a href="#item1" className="btn btn-xs">1</a>
-                <a href="#item2" className="btn btn-xs">2</a>
+                <a href="#item4" className="btn btn-xs">2</a>
                 <a href="#item3" className="btn btn-xs">3</a>
-                <a href="#item4" className="btn btn-xs">4</a>
+                {/* <a href="#item2" className="btn btn-xs">4</a> */}
             </div>
         </div>
     );

@@ -57,12 +57,12 @@ const AllJob = () => {
                         <tbody className="space-y-20">
                             {filteredJobs.map(job => (
                                 <tr className="mb-9" key={job.id}>
-                                    <td>{job.title}</td>
+                                    <td className="text-sky-700 font-bold">{job.title}</td>
                                     <td>{job.postingDate}</td>
                                     <td>{job.deadline}</td>
                                     <td>{job.salaryRange}</td>
                                     <td>
-                                        <Link to={`/job/${job._id}`}> <button className="btn hover:dark:bg-sky-700 hover:dark:text-sky-50">View Details</button></Link>
+                                        <Link to={`/job/${job._id}`}> <button className="btn hover:dark:bg-sky-700 hover:dark:text-sky-50 bg-transparent my-0 py-0">View Details</button></Link>
                                         {/* {
                                             user ? <Link to={`/job/${job._id}`}> <button className="btn hover:dark:bg-sky-700 hover:dark:text-sky-50">View Details</button></Link> : navigate('/login')
                                         } */}

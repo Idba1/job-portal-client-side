@@ -36,9 +36,9 @@ const Home = () => {
             <Slider></Slider>
             <TabSection alljob={alljob}></TabSection>
             <Career blogs={blogs}></Career>
-            <Fquestion></Fquestion>
             <SuccessStory></SuccessStory>
             <Newsletter></Newsletter>
+            <Fquestion></Fquestion>
         </div>
     );
 };
