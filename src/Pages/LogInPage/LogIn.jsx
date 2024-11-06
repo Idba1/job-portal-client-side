@@ -39,7 +39,7 @@ const LogIn = () => {
                     <div className="flex-1">
                         <div className="text-center">
                             <div  className="" >
-                                <img className="w-20 lg:w-36 h-12 lg:h-20 mx-auto" src="https://i.ibb.co/hZ9VcF6/logo.png" alt="" />
+                                <img className="w-20  lg:w-36 h-12 lg:h-20 mx-auto" src="https://i.ibb.co/hZ9VcF6/logo.png" alt="" />
                             </div>
                             <p className="mt-3 text-sky-700 dark:text-sky-700">Log In to Your Account</p>
                         </div>
@@ -77,7 +77,7 @@ const LogIn = () => {
                     </div>
                 </div>
 
-                <div className="bg-cover md:block md:w-2/5 lg:block lg:w-2/5" style={{ backgroundImage: "url(https://i.ibb.co/0jvdLRX/pexels-photo-4065892.webp)" }}>
+                <div className="bg-cover md:block hidden md:w-2/5 lg:block lg:w-2/5" style={{ backgroundImage: "url(https://i.ibb.co/0jvdLRX/pexels-photo-4065892.webp)" }}>
                     <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                         <div>
                             <h2 className="text-2xl font-bold text-white sm:text-3xl">Log In to Your Account</h2>
